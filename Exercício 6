@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Lista {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Leitura dos números inteiros
+        System.out.print("Digite o primeiro número inteiro: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Digite o segundo número inteiro: ");
+        int num2 = scanner.nextInt();
+        
+        // Determinar o menor e o maior número
+        int menor = Math.min(num1, num2);
+        int maior = Math.max(num1, num2);
+        
+        // Gerar um número aleatório dentro do intervalo
+        int numeroSorteado = random.nextInt(maior - menor + 1) + menor;
+        
+        // Exibir o número sorteado e verificar se é par ou ímpar
+        System.out.println("Número sorteado: " + numeroSorteado);
+        if (numeroSorteado % 2 == 0) {
+            System.out.println("O número gerado é par.");
+        } else {
+            System.out.println("O número gerado é ímpar.");
+        }
+        
+        scanner.close();
+    }
+}
