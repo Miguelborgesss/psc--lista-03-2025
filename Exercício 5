@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Lista {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+    // Leitura dos números
+    System.out.print("Digite o primeiro número: ");
+    double num1 = scanner.nextDouble();
+    
+    System.out.print("Digite o segundo número: ");
+    double num2 = scanner.nextDouble();
+    
+    // Leitura da operação
+    System.out.print("Digite a operação (+, -, *, /, ^): ");
+    char operacao = scanner.next().charAt(0);
+    
+    double resultado;
+    if (operacao == '+') {
+        resultado = num1 + num2;
+        System.out.println("Resultado: " + resultado);
+    } else if (operacao == '-') {
+        resultado = num1 - num2;
+        System.out.println("Resultado: " + resultado);
+    } else if (operacao == '*') {
+        resultado = num1 * num2;
+        System.out.println("Resultado: " + resultado);
+    } else if (operacao == '/') {
+        if (num2 != 0) {
+            resultado = num1 / num2;
+            System.out.println("Resultado: " + resultado);
+        } else {
+            System.out.println("Erro: divisão por zero.");
+        }
+    } else if (operacao == '^') {
+        resultado = Math.pow(num1, num2);
+        System.out.println("Resultado: " + resultado);
+    } else {
+        System.out.println("Erro: símbolo da operação inválido.");
+    }
+    
+    scanner.close();
+    }
+}
